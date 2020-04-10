@@ -1,6 +1,8 @@
 custom.el
 projectile-bookmarks.eld
+projectile.cache
 bookmarks
 auto-save-list
 straight
 transient
+*~

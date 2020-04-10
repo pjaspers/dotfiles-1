@@ -9,4 +9,4 @@
 ;; NeoTree
 (global-set-key [f8] 'neotree-toggle)
 (global-set-key (kbd "C-c f") 'neotree-find)
-(setq neo-theme (if window-system 'icons 'nerd)) ; 'classic, 'nerd, 'ascii, 'arrow
+(setq neo-theme 'arrow) ; 'classic, 'nerd, 'ascii, 'arrow

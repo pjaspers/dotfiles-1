@@ -9,3 +9,4 @@
 (show-paren-mode t)                                        ;; Highlight matching parenthesis
 (set-default 'truncate-lines t)                            ;; Turn of wrapping when line is too long
 
+(load-theme 'nord t)
