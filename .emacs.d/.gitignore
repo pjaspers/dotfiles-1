@@ -1,0 +1,12 @@
+elpa/
+.cask/
+eshell/
+.smex-items
+auto-save-list/
+custom.el
+url
+var
+projectile-bookmarks.eld
+bookmarks
+.org-id-locations
+smex-items
