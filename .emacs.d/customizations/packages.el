@@ -17,3 +17,4 @@
 (straight-use-package 'neotree)
 (straight-use-package 'magit)
 (straight-use-package 'reveal-in-osx-finder)
+(straight-use-package 'ag)
