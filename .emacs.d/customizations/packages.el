@@ -12,10 +12,12 @@
   (load bootstrap-file nil 'nomessage))
 
 ;; list packages here:
+(straight-use-package 'doom-themes)
 (straight-use-package 'nord-theme)
 (straight-use-package 'projectile)
-(straight-use-package 'neotree)
 (straight-use-package 'magit)
 (straight-use-package 'reveal-in-osx-finder)
 (straight-use-package 'ag)
 (straight-use-package 'doom-modeline)
+(straight-use-package 'all-the-icons)
+(straight-use-package 'git-gutter-fringe)

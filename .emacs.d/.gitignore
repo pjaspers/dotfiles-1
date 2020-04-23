@@ -1,3 +1,6 @@
+.cache/
+eshell
+ido.last
 custom.el
 projectile-bookmarks.eld
 projectile.cache
@@ -6,3 +9,4 @@ auto-save-list
 straight
 transient
 *~
+*#
