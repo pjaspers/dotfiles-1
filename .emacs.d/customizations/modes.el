@@ -1,3 +1,8 @@
+;; IDO
+(setq ido-everywhere t)
+(setq ido-enable-flex-matching t)
+(ido-mode t)
+
 ;; Projectile
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
@@ -10,3 +15,6 @@
 (global-set-key [f8] 'neotree-toggle)
 (global-set-key (kbd "C-c f") 'neotree-find)
 (setq neo-theme 'arrow) ; 'classic, 'nerd, 'ascii, 'arrow
+
+;; Doom Mode Line
+(doom-modeline-mode t)

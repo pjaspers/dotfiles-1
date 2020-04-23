@@ -2,7 +2,9 @@
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
 
-(global-linum-mode -1)                                      ;; Line numbers
+(global-linum-mode t)                                      ;; Line numbers
+(setq linum-format "%3d \u2502 ")
+
 (delete-selection-mode t)                                  ;; Act like a normal text editor
 (global-hl-line-mode t)                                    ;; Highlight current row
 (column-number-mode t)                                     ;; Show current column
