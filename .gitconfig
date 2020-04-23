@@ -1,0 +1,5 @@
+[user]
+	email = tom.94.bosmans@gmail.com
+	name = Tom Bosmans
+[core]
+	excludesfile = ~/.gitignore_global
