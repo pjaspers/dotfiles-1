@@ -32,3 +32,25 @@
 
 (setq interprogram-cut-function 'paste-to-osx)
 (setq interprogram-paste-function 'copy-from-osx)
+
+;; dashboard
+(require 'dashboard)
+(dashboard-setup-startup-hook)
+
+(setq dashboard-banner-logo-title "Welcome to Emacs Dashboard") ;; Set the title
+(setq dashboard-startup-banner "~/dotfiles/assets/banner.png") ;; Set the banner
+(setq dashboard-center-content nil) ;; Content is not centered by default. To center, set
+(setq dashboard-show-shortcuts nil) ;; To disable shortcut "jump" indicators for each section, set
+(setq dashboard-set-heading-icons t)
+(setq dashboard-set-file-icons t)
+(setq dashboard-items '((recents  . 5)
+                        (projects . 20)))
+
+(setq dashboard-set-navigator t)
+;; Format: "(icon title help action face prefix suffix)"
+(setq dashboard-navigator-buttons
+      `(;; line1
+        ((,(all-the-icons-octicon "mark-github" :height 1.1 :v-adjust 0.0)
+         "Github"
+         "Browse homepage"
+         (lambda (&rest _) (browse-url "https://github.com/TomBosmans"))))))

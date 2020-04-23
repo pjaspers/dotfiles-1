@@ -21,3 +21,5 @@
 (straight-use-package 'doom-modeline)
 (straight-use-package 'all-the-icons)
 (straight-use-package 'git-gutter-fringe)
+(straight-use-package 'centaur-tabs)
+(straight-use-package 'dashboard)
