@@ -23,3 +23,7 @@
 (straight-use-package 'git-gutter-fringe)
 (straight-use-package 'centaur-tabs)
 (straight-use-package 'dashboard)
+(straight-use-package 'treemacs)
+(straight-use-package 'treemacs-projectile)
+(straight-use-package 'web-mode)
+(straight-use-package 'exec-path-from-shell)

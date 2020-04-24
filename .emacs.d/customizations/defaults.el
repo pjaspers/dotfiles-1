@@ -2,6 +2,9 @@
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
 
+(add-to-list 'default-frame-alist
+             '(font . "Liga Roboto Mono"))
+
 (delete-selection-mode t)                                  ;; Act like a normal text editor
 (global-hl-line-mode t)                                    ;; Highlight current row
 (column-number-mode t)                                     ;; Show current column
@@ -17,7 +20,13 @@
 (setq mouse-drag-copy-region 'region)
 
 ;; Line numbers
-(global-linum-mode t)
+(define-global-minor-mode my-global-linum-mode linum-mode
+  (lambda ()
+    (when (not (memq major-mode
+                     (list 'term-mode 'treemacs-mode)))
+      (linum-mode))))
+
+(my-global-linum-mode t)
 (setq linum-format "%3d \u2502")
 
 ;; use clipboard hack for terminal
@@ -54,3 +63,9 @@
          "Github"
          "Browse homepage"
          (lambda (&rest _) (browse-url "https://github.com/TomBosmans"))))))
+
+;; OS X has an issue with picking up the right system env
+;; Explictly setting it here (So shell-command and buddies can use it)
+(require 'exec-path-from-shell)
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
