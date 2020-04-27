@@ -27,3 +27,4 @@
 (straight-use-package 'treemacs-projectile)
 (straight-use-package 'web-mode)
 (straight-use-package 'exec-path-from-shell)
+(straight-use-package 'org-bullets)
