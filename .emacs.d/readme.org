@@ -1,0 +1,81 @@
+* My Emacs
+** General Settings
+*** Prevent 'saving customizations' to be writtin in init.el.
+   https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Customizations.html
+   #+begin_src emacs-lisp
+     (setq custom-file "~/.emacs.d/custom.el")
+     (when (file-exists-p "custom.el") (load "custom"))
+   #+end_src
+*** Package Manager
+    🍀 Next-generation, purely functional package manager for the Emacs hacker.
+    https://github.com/raxod502/straight.el
+    #+begin_src emacs-lisp
+      (defvar bootstrap-version)
+      (let ((bootstrap-file
+	     (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+	    (bootstrap-version 5))
+	(unless (file-exists-p bootstrap-file)
+	  (with-current-buffer
+	      (url-retrieve-synchronously
+	       "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+	       'silent 'inhibit-cookies)
+	    (goto-char (point-max))
+	    (eval-print-last-sexp)))
+	(load bootstrap-file nil 'nomessage))
+
+    #+end_src
+*** Disable GNU clutter
+    #+begin_src emacs-lisp
+      (menu-bar-mode -1)
+      (toggle-scroll-bar -1)
+      (tool-bar-mode -1)
+    #+end_src
+*** Delete selection
+    Act like a normal text editor.
+    #+begin_src emacs-lisp
+      (delete-selection-mode t)
+    #+end_src
+*** Highlight matching parenthesis
+    #+begin_src emacs-lisp
+      (show-paren-mode t)
+    #+end_src
+*** Line Number
+    We don't enable it globally, enable it in the modes you want.
+    #+begin_src emacs-lisp
+      (setq linum-format "%3d \u2502")
+    #+end_src
+** UI
+*** Themes
+    Nord is the best :ok_hand:, sadly the emacs theme is missing some colors.
+    The doom version is more complete but it doesn't understand what makes nord theme.
+    By overriding the doom theme we do get the best of both it seems :D
+    #+begin_src emacs-lisp
+      (straight-use-package 'doom-themes)
+      (straight-use-package 'nord-theme)
+      (load-theme 'doom-nord t)
+      (load-theme 'nord t)
+    #+end_src
+*** Fonts
+    #+begin_src emacs-lisp
+      (add-to-list 'default-frame-alist '(font . "Source Code Pro"))
+    #+end_src
+** Modes
+*** Emojify
+    Yeah yeah I know...
+    #+begin_src emacs-lisp
+      (straight-use-package 'emojify)
+      (add-hook 'org-mode-hook 'emojify-mode)
+    #+end_src
+*** Projectile
+    #+begin_src emacs-lisp
+      (straight-use-package 'projectile)
+
+      (projectile-mode t)
+      (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+      (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+    #+end_src
+*** Magit
+    #+begin_src emacs-lisp
+      (straight-use-package 'magit)
+    #+end_src
+
