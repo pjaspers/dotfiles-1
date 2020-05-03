@@ -1,14 +1,7 @@
 * My Emacs
-** General Settings
-*** Prevent 'saving customizations' to be writtin in init.el.
-   https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Customizations.html
-   #+begin_src emacs-lisp
-     (setq custom-file "~/.emacs.d/custom.el")
-     (when (file-exists-p "custom.el") (load "custom"))
-   #+end_src
-*** Package Manager
+** Package Management
+*** [[https://github.com/raxod502/straight.el][Straight]]
     🍀 Next-generation, purely functional package manager for the Emacs hacker.
-    https://github.com/raxod502/straight.el
     #+begin_src emacs-lisp
       (defvar bootstrap-version)
       (let ((bootstrap-file
@@ -22,7 +15,16 @@
 	    (goto-char (point-max))
 	    (eval-print-last-sexp)))
 	(load bootstrap-file nil 'nomessage))
-
+    #+end_src
+*** Packages
+    #+begin_src emacs-lisp
+      (straight-use-package 'all-the-icons)    
+    #+end_src
+** General Settings
+*** Delete selection
+    Act like a normal text editor.
+    #+begin_src emacs-lisp
+      (delete-selection-mode t)
     #+end_src
 *** Disable GNU clutter
     #+begin_src emacs-lisp
@@ -30,15 +32,17 @@
       (toggle-scroll-bar -1)
       (tool-bar-mode -1)
     #+end_src
-*** Delete selection
-    Act like a normal text editor.
-    #+begin_src emacs-lisp
-      (delete-selection-mode t)
-    #+end_src
 *** Highlight matching parenthesis
     #+begin_src emacs-lisp
       (show-paren-mode t)
     #+end_src
+*** Package Manager
+*** Prevent 'saving customizations' to be writtin in init.el.
+   https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Customizations.html
+   #+begin_src emacs-lisp
+     (setq custom-file "~/.emacs.d/custom.el")
+     (when (file-exists-p "custom.el") (load "custom"))
+   #+end_src
 *** Stop making annoying sounds
     The error sounds just hurts my ears... :hear_no_evil:
     #+begin_src emacs-lisp
@@ -47,24 +51,6 @@
       (setq visible-bell nil)
     #+end_src  
 ** UI
-*** Themes
-    Nord is the best :ok_hand:, sadly the emacs theme is missing some colors.
-    The doom version is more complete but it doesn't understand what makes nord theme.
-    By overriding the doom theme we do get the best of both it seems :D
-    #+begin_src emacs-lisp
-      (straight-use-package 'doom-themes)
-      (straight-use-package 'nord-theme)
-      (load-theme 'doom-nord t)
-      (load-theme 'nord t)
-    #+end_src
-*** Fonts
-    #+begin_src emacs-lisp
-      (add-to-list 'default-frame-alist '(font . "Source Code Pro"))
-    #+end_src
-*** Icons
-    #+begin_src emacs-lisp
-      (straight-use-package 'all-the-icons)
-    #+end_src
 *** Dashboard
     First disable default buffers
     #+begin_src emacs-lisp
@@ -96,32 +82,21 @@
 	       "Browse homepage"
 	       (lambda (&rest _) (browse-url "https://github.com/TomBosmans"))))))
     #+end_src
+*** Fonts
+    #+begin_src emacs-lisp
+      (add-to-list 'default-frame-alist '(font . "Source Code Pro"))
+    #+end_src
+*** Themes
+    Nord is the best :ok_hand:, sadly the emacs theme is missing some colors.
+    The doom version is more complete but it doesn't understand what makes nord theme.
+    By overriding the doom theme we do get the best of both it seems :D
+    #+begin_src emacs-lisp
+      (straight-use-package 'doom-themes)
+      (straight-use-package 'nord-theme)
+      (load-theme 'doom-nord t)
+      (load-theme 'nord t)
+    #+end_src
 ** Modes
-*** Emojify
-    Yeah yeah I know...
-    #+begin_src emacs-lisp
-      (straight-use-package 'emojify)
-      (add-hook 'org-mode-hook 'emojify-mode)
-    #+end_src
-*** Projectile
-    #+begin_src emacs-lisp
-      (straight-use-package 'projectile)
-
-      (projectile-mode t)
-      (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-      (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-    #+end_src
-*** Magit
-    #+begin_src emacs-lisp
-      (straight-use-package 'magit)
-      (global-set-key (kbd "C-c m") 'magit-status)
-    #+end_src
-*** [[https://github.com/justbur/emacs-which-key][Wich Key]]
-    Emacs package that displays available keybindings in popup
-    #+begin_src emacs-lisp
-      (straight-use-package 'which-key)
-      (which-key-mode t)
-    #+end_src
 *** [[https://github.com/abo-abo/ace-window][Ace Window]]
     Quickly switch windows in Emacs
     
@@ -143,23 +118,18 @@
       (straight-use-package 'ace-window)
       (global-set-key (kbd "M-o") 'ace-window)
     #+end_src
-*** IDO
+*** AG
     #+begin_src emacs-lisp
-      (setq ido-everywhere t)
-      (setq ido-enable-flex-matching t)
-      (ido-mode t)
+      (straight-use-package 'ag)
     #+end_src
-*** Doom Mode Line
+
+    OS X has an issue with picking up the right system env
+    Explictly setting it here (So shell-command and buddies can use it)
     #+begin_src emacs-lisp
-      (straight-use-package 'doom-modeline)
-      (doom-modeline-mode t)
-    #+end_src
-*** Git Gutter Fringe
-    #+begin_src emacs-lisp
-      (straight-use-package 'git-gutter-fringe)
-      (require 'git-gutter-fringe)
-      ;; (global-git-gutter-mode +1)
-      ;; (setq-default left-fringe-width  20)
+      (straight-use-package 'exec-path-from-shell)
+      (require 'exec-path-from-shell)
+      (when (memq window-system '(mac ns))
+        (exec-path-from-shell-initialize))
     #+end_src
 *** Centaur Tabs
     #+begin_src emacs-lisp
@@ -173,6 +143,40 @@
 	    centaur-tabs-modified-marker "•")
 
       (centaur-tabs-mode t)
+    #+end_src
+*** Doom Mode Line
+    #+begin_src emacs-lisp
+      (straight-use-package 'doom-modeline)
+      (doom-modeline-mode t)
+    #+end_src
+*** Emojify
+    Yeah yeah I know...
+    #+begin_src emacs-lisp
+      (straight-use-package 'emojify)
+      (add-hook 'org-mode-hook 'emojify-mode)
+    #+end_src
+*** Git Gutter Fringe
+    #+begin_src emacs-lisp
+      (straight-use-package 'git-gutter-fringe)
+      (require 'git-gutter-fringe)
+      ;; (global-git-gutter-mode +1)
+      ;; (setq-default left-fringe-width  20)
+    #+end_src
+*** IDO
+    #+begin_src emacs-lisp
+      (setq ido-everywhere t)
+      (setq ido-enable-flex-matching t)
+      (ido-mode t)
+    #+end_src
+*** Linum mode
+    We don't enable it globally, enable it in the modes you want.
+    #+begin_src emacs-lisp
+      (setq linum-format "%3d \u2502")
+    #+end_src
+*** Magit
+    #+begin_src emacs-lisp
+      (straight-use-package 'magit)
+      (global-set-key (kbd "C-c m") 'magit-status)
     #+end_src
 *** Org
     #+begin_src emacs-lisp
@@ -189,30 +193,27 @@
 			      '(("^ *\\([-]\\) "
 				 (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
     #+end_src
-*** Linum mode
-    We don't enable it globally, enable it in the modes you want.
+*** Projectile
     #+begin_src emacs-lisp
-      (setq linum-format "%3d \u2502")
-    #+end_src
-*** AG
-    #+begin_src emacs-lisp
-      (straight-use-package 'ag)
-    #+end_src
+      (straight-use-package 'projectile)
 
-    OS X has an issue with picking up the right system env
-    Explictly setting it here (So shell-command and buddies can use it)
-    #+begin_src emacs-lisp
-      (straight-use-package 'exec-path-from-shell)
-      (require 'exec-path-from-shell)
-      (when (memq window-system '(mac ns))
-        (exec-path-from-shell-initialize))
+      (projectile-mode t)
+      (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+      (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
     #+end_src
 *** Reveal in OSX Finder
     #+begin_src emacs-lisp
       (straight-use-package 'reveal-in-osx-finder)
       (global-set-key (kbd "C-c z") 'reveal-in-osx-finder)
     #+end_src
+*** [[https://github.com/justbur/emacs-which-key][Wich Key]]
+    Emacs package that displays available keybindings in popup
+    #+begin_src emacs-lisp
+      (straight-use-package 'which-key)
+      (which-key-mode t)
+    #+end_src
 ** Keybindings
    #+begin_src emacs-lisp
      (global-set-key (kbd "C-x O") 'previous-multiframe-window) ;; revert of C-x o
    #+end_src
+
