@@ -17,9 +17,18 @@
 	(load bootstrap-file nil 'nomessage))
     #+end_src
 *** Packages
+**** All the icons
     #+begin_src emacs-lisp
       (straight-use-package 'all-the-icons)    
     #+end_src
+**** Treemacs
+     #+begin_src emacs-lisp
+       (straight-use-package 'treemacs)
+     #+end_src
+**** [[https://emacs-helm.github.io/helm/#getting-started][Helm]]
+     #+begin_src emacs-lisp
+       (straight-use-package 'helm)
+     #+end_src
 ** General Settings
 *** Delete selection
     Act like a normal text editor.
@@ -116,7 +125,7 @@
 
     #+begin_src emacs-lisp
       (straight-use-package 'ace-window)
-      (global-set-key (kbd "M-o") 'ace-window)
+      (global-set-key (kbd "C-x o") 'ace-window)
     #+end_src
 *** AG
     #+begin_src emacs-lisp
@@ -214,6 +223,24 @@
     #+end_src
 ** Keybindings
    #+begin_src emacs-lisp
-     (global-set-key (kbd "C-x O") 'previous-multiframe-window) ;; revert of C-x o
+     ;; (global-set-key (kbd "C-x O") 'previous-multiframe-window) ;; revert of C-x o
+     (global-set-key (kbd "C-c r") 'replace-regexp)
+     (global-set-key (kbd "C-c t") 'ansi-term)
+     (global-set-key (kbd "C-c h b") 'helm-buffers-list)
+     (global-set-key (kbd "C-c h f") 'helm-find-files)
+     (global-set-key (kbd "C-c h k") 'helm-show-kill-ring)
    #+end_src
-
+** Terminal
+   This is to paste from clipboard in terminal mode
+   #+begin_src emacs-lisp
+     (eval-after-load "term" '(define-key term-raw-map (kbd "C-c C-y") 'term-paste))
+   #+end_src
+** Ruby
+*** Enable linum mode
+   #+begin_src emacs-lisp
+     (add-hook 'ruby-mode-hook 'linum-mode t)
+   #+end_src
+*** Turn of line wrapping
+    #+begin_src emacs-lisp
+      (add-hook 'ruby-mode-hook 'toggle-truncate-lines)
+    #+end_src
