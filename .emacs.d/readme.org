@@ -21,13 +21,29 @@
     #+begin_src emacs-lisp
       (straight-use-package 'all-the-icons)    
     #+end_src
-**** Treemacs
+**** Dashboard
+     #+begin_src emacs-lisp
+       (straight-use-package 'dashboard)
+     #+end_src
+**** Emojify**** [[https://emacs-helm.github.io/helm/#getting-started][Helm]]
+     #+begin_src emacs-lisp
+       (straight-use-package 'helm)
+     #+end_src
+**** Org Bullets
+     #+begin_src emacs-lisp
+       (straight-use-package 'org-bullets)
+     #+end_src
+**** Reveal in osx finder**** Treemacs
      #+begin_src emacs-lisp
        (straight-use-package 'treemacs)
      #+end_src
-**** [[https://emacs-helm.github.io/helm/#getting-started][Helm]]
+
      #+begin_src emacs-lisp
-       (straight-use-package 'helm)
+       (straight-use-package 'reveal-in-osx-finder)
+     #+end_src
+
+     #+begin_src emacs-lisp
+       (straight-use-package 'emojify)
      #+end_src
 ** General Settings
 *** Delete selection
@@ -45,7 +61,6 @@
     #+begin_src emacs-lisp
       (show-paren-mode t)
     #+end_src
-*** Package Manager
 *** Prevent 'saving customizations' to be writtin in init.el.
    https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Customizations.html
    #+begin_src emacs-lisp
@@ -69,7 +84,6 @@
     #+end_src
 
     #+begin_src emacs-lisp
-      (straight-use-package 'dashboard)
       (require 'dashboard)
       (dashboard-setup-startup-hook)
 
@@ -81,15 +95,13 @@
 	    dashboard-set-file-icons t
 	    dashboard-items '((recents  . 5)
 			      (projects . 20))
-	    dashboard-set-navigator t)
-
-      ;; Format: "(icon title help action face prefix suffix)"
-      (setq dashboard-navigator-buttons
+	    dashboard-set-navigator t
+	    dashboard-navigator-buttons
 	    `(;; line1
 	      ((,(all-the-icons-octicon "mark-github" :height 1.1 :v-adjust 0.0)
-	       "Github"
-	       "Browse homepage"
-	       (lambda (&rest _) (browse-url "https://github.com/TomBosmans"))))))
+		"Github"
+		"Browse homepage"
+		(lambda (&rest _) (browse-url "https://github.com/TomBosmans"))))))
     #+end_src
 *** Fonts
     #+begin_src emacs-lisp
@@ -158,12 +170,6 @@
       (straight-use-package 'doom-modeline)
       (doom-modeline-mode t)
     #+end_src
-*** Emojify
-    Yeah yeah I know...
-    #+begin_src emacs-lisp
-      (straight-use-package 'emojify)
-      (add-hook 'org-mode-hook 'emojify-mode)
-    #+end_src
 *** Git Gutter Fringe
     #+begin_src emacs-lisp
       (straight-use-package 'git-gutter-fringe)
@@ -185,22 +191,8 @@
 *** Magit
     #+begin_src emacs-lisp
       (straight-use-package 'magit)
-      (global-set-key (kbd "C-c m") 'magit-status)
-    #+end_src
-*** Org
-    #+begin_src emacs-lisp
-      (straight-use-package 'org-bullets)
-      (require 'org-bullets)
-
-      (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-      (setq org-bullets-bullet-list '("⁖")
-	    org-hide-emphasis-markers t)
-    #+end_src
-    Make Lists use a dot:
-    #+begin_src emacs-lisp
-      (font-lock-add-keywords 'org-mode
-			      '(("^ *\\([-]\\) "
-				 (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+      (global-set-key (kbd "C-c m s") 'magit-status)
+      (global-set-key (kbd "C-c m p") 'magit-push)
     #+end_src
 *** Projectile
     #+begin_src emacs-lisp
@@ -209,11 +201,6 @@
       (projectile-mode t)
       (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
       (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-    #+end_src
-*** Reveal in OSX Finder
-    #+begin_src emacs-lisp
-      (straight-use-package 'reveal-in-osx-finder)
-      (global-set-key (kbd "C-c z") 'reveal-in-osx-finder)
     #+end_src
 *** [[https://github.com/justbur/emacs-which-key][Wich Key]]
     Emacs package that displays available keybindings in popup
@@ -226,9 +213,10 @@
      ;; (global-set-key (kbd "C-x O") 'previous-multiframe-window) ;; revert of C-x o
      (global-set-key (kbd "C-c r") 'replace-regexp)
      (global-set-key (kbd "C-c t") 'ansi-term)
+     (global-set-key (kbd "C-c z") 'reveal-in-osx-finder)
    #+end_src
 ** Terminal
-   This is to paste from clipboard in terminal mode
+*** This is to paste from clipboard in terminal mode
    #+begin_src emacs-lisp
      (eval-after-load "term" '(define-key term-raw-map (kbd "C-c C-y") 'term-paste))
    #+end_src
@@ -266,4 +254,26 @@
       (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
       (global-set-key (kbd "C-x b") 'helm-mini)
       (global-set-key (kbd "C-x C-f") 'helm-find-files)
+    #+end_src
+** Org
+*** Settings
+    #+begin_src emacs-lisp
+      (setq org-hide-emphasis-markers t)
+    #+end_src
+*** Add nice bullets
+    #+begin_src emacs-lisp
+      (require 'org-bullets)
+
+      (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+      (setq org-bullets-bullet-list '("⁖"))
+    #+end_src
+*** Make Lists use a dot
+    #+begin_src emacs-lisp
+      (font-lock-add-keywords 'org-mode
+			      '(("^ *\\([-]\\) "
+				 (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+    #+end_src
+*** Add emojis
+    #+begin_src emacs-lisp
+      (add-hook 'org-mode-hook 'emojify-mode)
     #+end_src
