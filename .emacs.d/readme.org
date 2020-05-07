@@ -61,6 +61,10 @@
      #+begin_src emacs-lisp
        (straight-use-package 'ivy)
      #+end_src
+**** [[https://github.com/seagle0128/all-the-icons-ivy-rich][All the icons ivy rich]]
+     #+begin_src emacs-lisp
+       (straight-use-package 'all-the-icons-ivy-rich)
+     #+end_src
 **** Org Bullets
      #+begin_src emacs-lisp
        (straight-use-package 'org-bullets)
@@ -155,6 +159,8 @@
 *** Mini buffer completion
     #+begin_src emacs-lisp
       (ivy-mode t)
+      (ivy-rich-mode t)
+      (all-the-icons-ivy-rich-mode t)
       (counsel-mode t)
       (counsel-projectile-mode t)
 
