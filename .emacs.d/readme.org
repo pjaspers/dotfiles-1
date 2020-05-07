@@ -159,10 +159,10 @@
 *** Mini buffer completion
     #+begin_src emacs-lisp
       (ivy-mode t)
-      (ivy-rich-mode t)
-      (all-the-icons-ivy-rich-mode t)
       (counsel-mode t)
       (counsel-projectile-mode t)
+      (ivy-rich-mode t)
+      (all-the-icons-ivy-rich-mode t)
 
       (setq ivy-use-virtual-buffers t
             ivy-count-format "%d/%d ")
