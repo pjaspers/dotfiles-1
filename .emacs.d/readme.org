@@ -165,8 +165,33 @@
       (all-the-icons-ivy-rich-mode t)
 
       (setq ivy-use-virtual-buffers t
-            ivy-count-format "%d/%d ")
+	    ivy-count-format "%d/%d ")
+
+      (setq all-the-icons-ivy-file-commands
+	    '(counsel-find-file counsel-file-jump counsel-recentf counsel-projectile-find-file counsel-projectile-find-dir))
     #+end_src
+**** [[https://github.com/abo-abo/swiper/wiki/Dont-open-directory-mode][don't open directory mode]]
+     When enable "Don't open directory" mode, ivy-mode will only open file and don't open directory. if user want to open dirctory, another key should typed, for example: "C-f". This mode is simple and predictable.
+
+     When the below code is an example:
+     1 when type "enter", if current candidate is a directory, its subdir will be completed, if a file, open it.
+     2 if user want to open directory, type "C-f".
+
+     #+begin_src emacs-lisp
+       (setq ivy-extra-directories nil)
+
+       (defun eh-ivy-open-current-typed-path ()
+	 (interactive)
+	 (when ivy--directory
+	   (let* ((dir ivy--directory)
+		  (text-typed ivy-text)
+		  (path (concat dir text-typed)))
+	     (delete-minibuffer-contents)
+	     (ivy--done path))))
+
+       (define-key ivy-minibuffer-map (kbd "<return>") 'ivy-alt-done)
+       (define-key ivy-minibuffer-map (kbd "C-f") 'eh-ivy-open-current-typed-path)
+     #+end_src
 *** Modeline
     #+begin_src emacs-lisp
       (doom-modeline-mode t)
@@ -232,6 +257,7 @@
      (global-set-key (kbd "C-c r") 'replace-regexp)
      (global-set-key (kbd "C-c t") 'ansi-term)
      (global-set-key (kbd "C-c z") 'reveal-in-osx-finder)
+     (global-set-key (kbd "C-c l o") 'browse-url-at-point)
    #+end_src
 ** Terminal
 *** This is to paste from clipboard in terminal mode
@@ -307,8 +333,9 @@
       (add-hook 'org-mode-hook 'emojify-mode)
     #+end_src
 ** Magit
-   #+begin_src emacs-lisp
-     (global-set-key (kbd "C-c m s") 'magit-status)
-     (global-set-key (kbd "C-c m p") 'magit-push)
-     (global-set-key (kbd "C-c m c") 'magit-checkout)
-   #+end_src
+*** Keybindings
+    #+begin_src emacs-lisp
+      (global-set-key (kbd "C-c m s") 'magit-status)
+      (global-set-key (kbd "C-c m p") 'magit-push)
+      (global-set-key (kbd "C-c m c") 'magit-checkout)
+    #+end_src
