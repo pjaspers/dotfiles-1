@@ -1,231 +1,252 @@
 Content-Type: text/enriched
 Text-Width: 70
 
-<x-color><param>#8FBCBB</param><bold>* <x-display><param>(image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f69a.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)</param>:truck:</x-display> Package Management</bold></x-color>
+* Package Management
 
-<x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f477.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)</param>👷</x-display> </bold></x-color>[[https://github.com/raxod502/straight.el][Straight]]
+** [[https://github.com/raxod502/straight.el][Straight]]
 
-    <x-display><param>(image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f340.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)</param>🍀</x-display> Next-generation, purely functional package manager for the Emacs hacker.
+    Next-generation, purely functional package manager for the Emacs hacker.
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+    #+begin_src emacs-lisp
 
-</x-color></x-bg-color><x-bg-color><param>#373E4C</param><x-color><param>#D8DEE9</param>      (<x-color><param>#81A1C1</param>defvar</x-color> <x-color><param>#D8DEE9</param>bootstrap-version</x-color>)
-      (<x-color><param>#81A1C1</param>let</x-color> ((bootstrap-file
-             (expand-file-name <x-color><param>#A3BE8C</param>"straight/repos/straight.el/bootstrap.el"</x-color> user-emacs-directory))
+      (defvar bootstrap-version)
+      (let ((bootstrap-file
+             (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
             (bootstrap-version 5))
-        (<x-color><param>#81A1C1</param>unless</x-color> (file-exists-p bootstrap-file)
-          (<x-color><param>#81A1C1</param>with-current-buffer</x-color>
+        (unless (file-exists-p bootstrap-file)
+          (with-current-buffer
               (url-retrieve-synchronously
-               <x-color><param>#A3BE8C</param>"https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"</x-color>
+               "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
                'silent 'inhibit-cookies)
             (goto-char (point-max))
             (eval-print-last-sexp)))
         (load bootstrap-file nil 'nomessage))
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+    #+end_src
 
-</x-color><x-color><param>#2E3440</param><x-bg-color><param>#2E3440</param>*</x-bg-color></x-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(disable-eval (image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f4e6.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15))</param>📦</x-display> Packages</bold></x-color>
+** Packages
 
-<x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* </bold></x-color>[[https://github.com/abo-abo/ace-window][Ace Window]]
+*** [[https://github.com/abo-abo/ace-window][Ace Window]]
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>     #+begin_src emacs-lisp
+     #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>       (straight-use-package 'ace-window)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>     #+end_src
+       (straight-use-package 'ace-window)
+     #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* Ag</bold></x-color>
+*** Ag
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>     #+begin_src emacs-lisp
+     #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>       (straight-use-package 'ag)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>     #+end_src
+       (straight-use-package 'ag)
+     #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* All the icons</bold></x-color>
+*** All the icons
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+    #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>      (straight-use-package 'all-the-icons)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+      (straight-use-package 'all-the-icons)
+    #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* </bold></x-color>[[https://github.com/seagle0128/all-the-icons-ivy-rich][All the icons ivy rich]]
+*** [[https://github.com/seagle0128/all-the-icons-ivy-rich][All the icons ivy rich]]
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>     #+begin_src emacs-lisp
+     #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>       (straight-use-package 'all-the-icons-ivy-rich)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>     #+end_src
+       (straight-use-package 'all-the-icons-ivy-rich)
+     #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* </bold></x-color>[[http://company-mode.github.io/][Company]]
+*** [[http://company-mode.github.io/][Company]]
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>     #+begin_src emacs-lisp
+     #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>       (straight-use-package 'company)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>     #+end_src
+       (straight-use-package 'company)
+     #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* </bold></x-color>[[https://github.com/ericdanan/counsel-projectile][Counsel projectile]]
+*** [[https://github.com/ericdanan/counsel-projectile][Counsel projectile]]
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>     #+begin_src emacs-lisp
+     #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>       (straight-use-package 'counsel-projectile)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>     #+end_src
+       (straight-use-package 'counsel-projectile)
+     #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* Dashboard</bold></x-color>
+*** Dashboard
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>     #+begin_src emacs-lisp
+     #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>       (straight-use-package 'dashboard)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>     #+end_src
+       (straight-use-package 'dashboard)
+     #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* Doom modeline</bold></x-color>
+*** Doom modeline
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>     #+begin_src emacs-lisp
+     #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>       (straight-use-package 'doom-modeline)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>     #+end_src
+       (straight-use-package 'doom-modeline)
+     #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* Emojify</bold></x-color>
+*** Emojify
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>     #+begin_src emacs-lisp
+     #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>       (straight-use-package 'emojify)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>     #+end_src
+       (straight-use-package 'emojify)
+     #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* Exec path from shell</bold></x-color>
+*** Exec path from shell
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>     #+begin_src emacs-lisp
+     #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>       (straight-use-package 'exec-path-from-shell)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>     #+end_src
+       (straight-use-package 'exec-path-from-shell)
+     #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* </bold></x-color>[[https://github.com/abo-abo/swiper][Ivy - Counsel - Swiper]]
+*** [[https://github.com/johnw42/fira-code-emacs][Fira code mode]]
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>     #+begin_src emacs-lisp
+    #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>       (straight-use-package 'ivy)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>     #+end_src
+      (straight-use-package 'fira-code-mode)
+    #+end_src
+*** [[https://github.com/DarthFennec/highlight-indent-guides][Highlight indent guides]]
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* Magit</bold></x-color>
+    #+begin_src emacs-lisp
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>     #+begin_src emacs-lisp
+      (straight-use-package 'highlight-indent-guides)
 
-</x-color><x-color><param>#D8DEE9</param>       (straight-use-package 'magit)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>     #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* Org Bullets</bold></x-color>
+      (setq highlight-indent-guides-method 'character)
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>     #+begin_src emacs-lisp
+      (setq highlight-indent-guides-character ?\·)
 
-</x-color><x-color><param>#D8DEE9</param>       (straight-use-package 'org-bullets)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>     #+end_src
+      (setq highlight-indent-guides-auto-character-face-perc 20)
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* Projectile</bold></x-color>
+<indent>    </indent>#+end_src
+*** [[https://github.com/abo-abo/swiper][Ivy - Counsel - Swiper]]
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>     #+begin_src emacs-lisp
+     #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>       (straight-use-package 'projectile)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>     #+end_src
+       (straight-use-package 'ivy)
+     #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* Reveal in osx finder</bold></x-color>
+*** Magit
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>     #+begin_src emacs-lisp
+     #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>       (straight-use-package 'reveal-in-osx-finder)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>     #+end_src
+       (straight-use-package 'magit)
+     #+end_src
+*** Org Bullets
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* </bold></x-color>[[https://github.com/felipeochoa/rjsx-mode][Rjsx mode]]
+     #+begin_src emacs-lisp
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+       (straight-use-package 'org-bullets)
+     #+end_src
 
-</x-color><x-color><param>#D8DEE9</param>      (straight-use-package 'rjsx-mode)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* </bold></x-color>[[https://github.com/rubocop-hq/rubocop-emacs][Rubocop]]
+*** Projectile
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+     #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>      (straight-use-package 'rubocop)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+       (straight-use-package 'projectile)
+     #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* </bold></x-color>[[https://github.com/purcell/sqlformat/][Sqlformat]]
+*** Reveal in osx finder
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>     #+begin_src emacs-lisp
+     #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>       (straight-use-package 'sqlformat)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>     #+end_src
+       (straight-use-package 'reveal-in-osx-finder)
+     #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* Treemacs</bold></x-color>
+*** [[https://github.com/felipeochoa/rjsx-mode][Rjsx mode]]
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>     #+begin_src emacs-lisp
+    #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>       (straight-use-package 'treemacs)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>     #+end_src
+      (straight-use-package 'rjsx-mode)
+    #+end_src
+*** [[https://github.com/rubocop-hq/rubocop-emacs][Rubocop]]
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* </bold></x-color>[[http://web-mode.org/][Web mode]]
+    #+begin_src emacs-lisp
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+      (straight-use-package 'rubocop)
+    #+end_src
 
-</x-color><x-color><param>#D8DEE9</param>      (straight-use-package 'web-mode)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* </bold></x-color>[[https://github.com/justbur/emacs-which-key][Wich Key]]
+*** [[https://github.com/purcell/sqlformat/][Sqlformat]]
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>     #+begin_src emacs-lisp
+     #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>       (straight-use-package 'which-key)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>     #+end_src
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* </bold></x-color>[[https://github.com/johnw42/fira-code-emacs][Fira code mode]]
+       (straight-use-package 'sqlformat)
+     #+end_src
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+*** [[http://web-mode.org/][Web mode]]
 
-</x-color><x-color><param>#D8DEE9</param>      (straight-use-package 'fira-code-mode)
-</x-color></x-bg-color><x-color><param>#78808f</param>    #+end_src</x-color>
-<x-color><param>#8FBCBB</param><bold>* <x-display><param>(image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f3ad.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)</param>🎭</x-display> UI</bold></x-color>
+    #+begin_src emacs-lisp
 
-<x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/270f.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)</param>✏</x-display> Fonts</bold></x-color>
+      (straight-use-package 'web-mode)
+    #+end_src
+*** [[https://github.com/justbur/emacs-which-key][Wich Key]]
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+     #+begin_src emacs-lisp
 
-</x-color></x-bg-color><x-bg-color><param>#373E4C</param><x-color><param>#D8DEE9</param>      (add-to-list 'default-frame-alist '(font . <x-color><param>#A3BE8C</param>"Fira Code"</x-color>))
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+       (straight-use-package 'which-key)
+     #+end_src
+*** [[https://github.com/zenozeng/yafolding.el][Yafolding]]
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/3030.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)</param>〰</x-display> Modeline</bold></x-color>
+    #+begin_src emacs-lisp
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+      (straight-use-package 'yafolding)
+    #+end_src
+*** [[https://github.com/emacsorphanage/git-gutter-fringe][Git-gutter-fringe]]
 
-</x-color></x-bg-color><x-bg-color><param>#373E4C</param><x-color><param>#D8DEE9</param>      (doom-modeline-mode t)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+    #+begin_src emacs-lisp]
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f3a8.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)</param>🎨</x-display> Themes</bold></x-color>
+      (straight-use-package 'git-gutter-fringe)
 
-    Nord is the best <x-display><param>(image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f44c.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)</param>:ok_hand:</x-display>, sadly the emacs theme is missing some colors.
+      (require 'git-gutter-fringe)
+
+      (setq git-gutter-fr:side 'right-fringe)
+    #+end_src
+* UI
+
+** Fonts
+
+    #+begin_src emacs-lisp
+
+      (add-to-list 'default-frame-alist '(font . "Fira Code"))
+    #+end_src
+
+** Modeline
+
+    #+begin_src emacs-lisp
+
+      (doom-modeline-mode t)
+    #+end_src
+
+** Themes
+
+    Nord is the best _hand:, sadly the emacs theme is missing some colors.
     The doom version is more complete but it doesn't understand what makes nord theme.
     By overriding the doom theme we do get the best of both it seems <x-display><param>(image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f603.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)</param>:D</x-display>
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+    #+begin_src emacs-lisp
 
-</x-color></x-bg-color><x-bg-color><param>#373E4C</param><x-color><param>#D8DEE9</param>      (straight-use-package 'doom-themes)
+      (straight-use-package 'doom-themes)
       (straight-use-package 'nord-theme)
       (load-theme 'doom-nord t)
       (load-theme 'nord t)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+    #+end_src
 
-</x-color><x-color><param>#2E3440</param><x-bg-color><param>#2E3440</param>*</x-bg-color></x-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(disable-eval (image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f4cb.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15))</param>📋</x-display> Dashboard</bold></x-color>
+** Dashboard
 
     First disable default buffers
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+    #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>      (<x-color><param>#81A1C1</param>setq-default</x-color> message-log-max nil)
-      (kill-buffer <x-color><param>#A3BE8C</param>"*Messages*"</x-color>)
-      (kill-buffer <x-color><param>#A3BE8C</param>"*scratch*"</x-color>)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+      (setq-default message-log-max nil)
+      (kill-buffer "*Messages*")
+      (kill-buffer "*scratch*")
+    #+end_src
 
-</x-color>
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+    #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>      (<x-color><param>#81A1C1</param>require</x-color> '<x-color><param>#81A1C1</param>dashboard</x-color>)
+      (require 'dashboard)
       (dashboard-setup-startup-hook)
 
 
-      (<x-color><param>#81A1C1</param>setq</x-color> dashboard-banner-logo-title <x-color><param>#A3BE8C</param>"Welcome to Emacs Dashboard"</x-color>
-            dashboard-startup-banner <x-color><param>#A3BE8C</param>"~/dotfiles/assets/banner.png"</x-color>
+      (setq dashboard-banner-logo-title "Welcome to Emacs Dashboard"
+            dashboard-startup-banner "~/dotfiles/assets/banner.png"
             dashboard-center-content nil
             dashboard-show-shortcuts nil
             dashboard-set-heading-icons t
@@ -234,87 +255,77 @@ Text-Width: 70
                               (projects . 20))
             dashboard-set-navigator t
             dashboard-navigator-buttons
-            `(<x-color><param>#616e88</param>;; line1
-</x-color>              ((,(all-the-icons-octicon <x-color><param>#A3BE8C</param>"mark-github"</x-color> <x-color><param>#81A1C1</param>:height</x-color> 1.1 <x-color><param>#81A1C1</param>:v-adjust</x-color> 0.0)
-                <x-color><param>#A3BE8C</param>"Github"</x-color>
-                <x-color><param>#A3BE8C</param>"Browse homepage"</x-color>
-                (<x-color><param>#81A1C1</param>lambda</x-color> (<x-color><param>#8FBCBB</param>&rest</x-color> _) (browse-url <x-color><param>#A3BE8C</param>"https://github.com/TomBosmans"</x-color>))))))
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+            `(;; line1
+              ((,(all-the-icons-octicon "mark-github" :height 1.1 :v-adjust 0.0)
+                "Github"
+                "Browse homepage"
+                (lambda (&rest _) (browse-url "https://github.com/TomBosmans"))))))
+    #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(disable-eval (image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f4d1.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15))</param>📑</x-display> Navigation</bold></x-color>
+** Navigation
 
     Quickly switch windows in Emacs
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+    #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>      (global-set-key (kbd <x-color><param>#A3BE8C</param>"C-x o"</x-color>) 'ace-window)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+      (global-set-key (kbd "C-x o") 'ace-window)
+    #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>***</x-color></x-bg-color><x-color><param>#5E81AC</param>* Documentation</x-color>
+**** Documentation
 
-     <x-color><param>#81A1C1</param>|<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>Actions while in ace-window<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>                                                      <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|</x-color>
+     | Actions while in ace-window |                                                        |
+     |-----------------------------+--------------------------------------------------------|
 
-     <x-color><param>#81A1C1</param>|-----------------------------+--------------------------------------------------------|</x-color>
+     | key                         | action                                                 |
 
-     <x-color><param>#81A1C1</param>|<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>key                        <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>action                                                <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|</x-color>
+     |-----------------------------+--------------------------------------------------------|
 
-     <x-color><param>#81A1C1</param>|-----------------------------+--------------------------------------------------------|</x-color>
+     | x                           | delete window                                          |
 
-     |<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>x                          <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>delete window                                         <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|
+     | m                           | swap windows                                           |
 
-     |<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>m                          <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>swap windows                                          <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|
+     | M                           | move window                                            |
 
-     |<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>M                          <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>move window                                           <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|
+     | c                           | copy window                                            |
 
-     |<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>c                          <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>copy window                                           <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|
+     | j                           | select buffer                                          |
 
-     |<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>j                          <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>select buffer                                         <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|
+     | n                           | select the previous window                             |
 
-     |<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>n                          <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>select the previous window                            <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|
+     | u                           | select buffer in the other window                      |
 
-     |<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>u                          <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>select buffer in the other window                     <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|
+     | c                           | split window fairly, either vertically or horizontally |
 
-     |<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>c                          <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>split window fairly, either vertically or horizontally<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|
+     | v                           | split window vertically                                |
 
-     |<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>v                          <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>split window vertically                               <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|
+     | b                           | split window horizontally                              |
 
-     |<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>b                          <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>split window horizontally                             <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|
+     | o                           | maximize current window                                |
 
-     |<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>o                          <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>maximize current window                               <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|
+     | ?                           | show these command bindings                            |
 
-     <x-color><param>#81A1C1</param>|<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>?                          <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|<x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>show these command bindings                           <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (space :relative-width 1))))))))))))))))))))))))))))))))))))))))))))))))))))))</param> </x-display>|</x-color>
 
-<x-color><param>#8FBCBB</param><bold>* <x-display><param>(image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f51f.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)</param>🔟</x-display> Global Keybindings</bold></x-color>
-
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>   #+begin_src emacs-lisp
-
-</x-color></x-bg-color><x-bg-color><param>#373E4C</param><x-color><param>#D8DEE9</param>     <x-color><param>#616e88</param>;; (global-set-key (kbd "C-x O") 'previous-multiframe-window) ;; revert of C-x o
-</x-color>     (global-set-key (kbd <x-color><param>#A3BE8C</param>"C-c r"</x-color>) 'replace-regexp)
-     (global-set-key (kbd <x-color><param>#A3BE8C</param>"C-c t"</x-color>) 'ansi-term)
-     (global-set-key (kbd <x-color><param>#A3BE8C</param>"C-c z"</x-color>) 'reveal-in-osx-finder)
-     (global-set-key (kbd <x-color><param>#A3BE8C</param>"C-c l o"</x-color>) 'browse-url-at-point)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>   #+end_src
-</x-color><x-color><param>#8FBCBB</param><bold>* <x-display><param>(image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f4be.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)</param>💾</x-display> My Functions</bold></x-color>
-<x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* Cleanup file</bold></x-color>
+* My Functions
+** Cleanup file
 
    removes tabs and white space.
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>   #+begin_src emacs-lisp
+   #+begin_src emacs-lisp
 
-</x-color></x-bg-color><x-bg-color><param>#373E4C</param><x-color><param>#D8DEE9</param>     (<x-color><param>#81A1C1</param>defun</x-color> <x-color><param>#88C0D0</param>cleanup-file</x-color> ()
+     (defun cleanup-file ()
        (untabify (point-min) (point-max))
        (whitespace-cleanup))
 
 
-     (<x-color><param>#81A1C1</param>defun</x-color> <x-color><param>#88C0D0</param>cleanup-file-on-save</x-color> ()
+     (defun cleanup-file-on-save ()
        (add-hook 'before-save-hook 'cleanup-file nil t))
 
 
-     (<x-color><param>#81A1C1</param>defun</x-color> <x-color><param>#88C0D0</param>stop-cleanup-file-on-save</x-color> ()
+     (defun stop-cleanup-file-on-save ()
 
        (remove-hook 'before-save-hook 'cleanup-file t))
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>   #+end_src
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* dev mode</bold></x-color>
+   #+end_src
+** dev mode
 
    This mode will setup all basics I like to have when writing code.
 
@@ -325,172 +336,230 @@ Text-Width: 70
 
    Also recommended to use fira code font, although it does work with other fonts.
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>   #+begin_src emacs-lisp
+   #+begin_src emacs-lisp
 
-</x-color></x-bg-color><x-bg-color><param>#373E4C</param><x-color><param>#D8DEE9</param>     (<x-color><param>#81A1C1</param>defun</x-color> <x-color><param>#88C0D0</param>dev-setup</x-color> ()
+     (defun dev-setup ()
        (linum-mode t)
        (subword-mode t)
        (hl-line-mode t)
        (company-mode t)
 
        (fira-code-mode t)
+
+       (highlight-indent-guides-mode t)
+
+       (yafolding-mode t)
+
+       (git-gutter-mode t)
        (toggle-truncate-lines)
-       (cleanup-file-on-save))
+       (cleanup-file-on-save)
+
+       ;; keybindings
+
+       (local-set-key (kbd "C-M-return") 'yafolding-toggle-all)
+
+       (local-set-key (kbd "C-return") 'yafolding-toggle-element))
 
 
-     (<x-color><param>#81A1C1</param>defun</x-color> <x-color><param>#88C0D0</param>dev-teardown</x-color> ()
+     (defun dev-teardown ()
        (linum-mode 0)
        (subword-mode 0)
        (hl-line-mode 0)
        (company-mode 0)
 
        (fira-code-mode 0)
+
+       (yafolding-mode 0)
+
+       (highlight-indent-guides-mode 0)
+
+       (git-gutter-mode 0)
        (toggle-truncate-lines)
        (stop-cleanup-file-on-save))
 
 
-     (<x-color><param>#81A1C1</param>define-minor-mode</x-color> <x-color><param>#88C0D0</param>dev-mode</x-color>
-       <x-color><param>#616e88</param>"Hammer time!."</x-color>
-       <x-color><param>#81A1C1</param>:lighter</x-color> <x-color><param>#A3BE8C</param>" dev"</x-color>
-       (<x-color><param>#81A1C1</param>if</x-color> dev-mode
+     (define-minor-mode dev-mode
+       "Hammer time!."
+       :lighter " dev"
+       (if dev-mode
            (dev-setup)
          (dev-teardown)))
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>   #+end_src
+   #+end_src
+** open terminal
 
-</x-color><x-color><param>#8FBCBB</param><bold>* <x-display><param>(image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f4bb.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)</param>💻</x-display> General Settings</bold></x-color>
+   #+begin_src emacs-lisp
+     (defun named-term (name)
+       "Create a terminal with given name."
+       (interactive "sName: ")
+       (ansi-term "/bin/zsh" name))
 
-<x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/2139.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)</param>ℹ</x-display> Display available keybindings in popup</bold></x-color>
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+     (defun open-named-term (name)
+       "Create or open a named terminal buffer"
+       (interactive "sName:")
+       (let ((buffer (concat "*" name "*")))
+         (if (get-buffer buffer) (switch-to-buffer buffer) (named-term name))))
 
-</x-color></x-bg-color><x-bg-color><param>#373E4C</param><x-color><param>#D8DEE9</param>      (which-key-mode t)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/26d4.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)</param>⛔</x-display> Prevent 'saving customizations' to be writtin in init.el.</bold></x-color>
+     (defun open-console ()
+       "Create or open terminal buffer."
+       (interactive)
+       (open-named-term "console"))
+   #+end_src
+
+* Global Keybindings
+
+   #+begin_src emacs-lisp
+
+     ;; (global-set-key (kbd "C-x O") 'previous-multiframe-window) ;; revert of C-x o
+     (global-set-key (kbd "C-c r") 'replace-regexp)
+     (global-set-key (kbd "C-c t") 'open-console)
+
+     (global-set-key (kbd "C-c T") 'open-named-term)
+     (global-set-key (kbd "C-c z") 'reveal-in-osx-finder)
+     (global-set-key (kbd "C-c l o") 'browse-url-at-point)
+
+     (global-set-key (kbd "C-s") 'swiper)
+   #+end_src
+* General Settings
+
+** Pickup changes to files.
+
+   #+begin_src emacs-lisp
+
+     (global-auto-revert-mode 1)
+   #+end_src
+** Display available keybindings in popup
+
+    #+begin_src emacs-lisp
+
+      (which-key-mode t)
+    #+end_src
+
+** Prevent 'saving customizations' to be writtin in init.el.
 
     https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Customizations.html
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+    #+begin_src emacs-lisp
 
-</x-color></x-bg-color><x-bg-color><param>#373E4C</param><x-color><param>#D8DEE9</param>      (<x-color><param>#81A1C1</param>setq</x-color> custom-file <x-color><param>#A3BE8C</param>"~/.emacs.d/custom.el"</x-color>)
-      (<x-color><param>#81A1C1</param>when</x-color> (file-exists-p <x-color><param>#A3BE8C</param>"custom.el"</x-color>) (load <x-color><param>#A3BE8C</param>"custom"</x-color>))
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* Stop making temp files!</bold></x-color>
+      (setq custom-file "~/.emacs.d/custom.el")
+      (when (file-exists-p "custom.el") (load "custom"))
+    #+end_src
+** Project management
 
-   Just ripped it from [[https://github.com/pjaspers/emacs/blob/master/customizations/pjaspers-editing.el#L51][pjasper]].
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>   #+begin_src emacs-lisp
+    #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>     (<x-color><param>#81A1C1</param>setq</x-color> backup-inhibited t
-           make-backup-files nil
-           backup-directory-alist `((<x-color><param>#A3BE8C</param>".*"</x-color> . ,temporary-file-directory))
-           auto-save-file-name-transforms `((<x-color><param>#A3BE8C</param>".*"</x-color> ,temporary-file-directory t)))
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>   #+end_src
+      (projectile-mode t)
+      (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+      (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+    #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(disable-eval (disable-eval (image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f3e2.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)))</param>🏢</x-display> Project management</bold></x-color>
+** Silver Searcher
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+**** Install
 
-</x-color><x-color><param>#D8DEE9</param>      (projectile-mode t)
-      (define-key projectile-mode-map (kbd <x-color><param>#A3BE8C</param>"s-p"</x-color>) 'projectile-command-map)
-      (define-key projectile-mode-map (kbd <x-color><param>#A3BE8C</param>"C-c p"</x-color>) 'projectile-command-map)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+    #+begin_src shell
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(disable-eval (disable-eval (image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f50d.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)))</param>🔍</x-display> Silver Searcher</bold></x-color>
+      brew install the_silver_searcher
+    #+end_src
 
-<x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>***</x-color></x-bg-color><x-color><param>#5E81AC</param>* Install</x-color>
+**** Keybindings
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src shell
+    #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>      brew install the_silver_searcher
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+      (global-set-key (kbd "C-c s s") 'ag)
+      (global-set-key (kbd "C-c s p") 'ag-project)
+      (global-set-key (kbd "C-c s k") 'ag-kill-buffers)
+    #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>***</x-color></x-bg-color><x-color><param>#5E81AC</param>* Keybindings</x-color>
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+** Stop making annoying sounds
 
-</x-color><x-color><param>#D8DEE9</param>      (global-set-key (kbd <x-color><param>#A3BE8C</param>"C-c s s"</x-color>) 'ag)
-      (global-set-key (kbd <x-color><param>#A3BE8C</param>"C-c s p"</x-color>) 'ag-project)
-      (global-set-key (kbd <x-color><param>#A3BE8C</param>"C-c s k"</x-color>) 'ag-kill-buffers)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+    The error sounds just hurts my ears...
 
-</x-color>
+    #+begin_src emacs-lisp
 
-<x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(disable-eval (disable-eval (image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f515.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)))</param>🔕</x-display> Stop making annoying sounds</bold></x-color>
+      (defun my-bell-function ())
+      (setq ring-bell-function 'my-bell-function)
+      (setq visible-bell nil)
+    #+end_src
 
-    The error sounds just hurts my ears... <x-display><param>(disable-eval (disable-eval (image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f649.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)))</param>:hear_no_evil:</x-display>
-
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
-
-</x-color><x-color><param>#D8DEE9</param>      (<x-color><param>#81A1C1</param>defun</x-color> <x-color><param>#88C0D0</param>my-bell-function</x-color> ())
-      (<x-color><param>#81A1C1</param>setq</x-color> ring-bell-function 'my-bell-function)
-      (<x-color><param>#81A1C1</param>setq</x-color> visible-bell nil)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
-
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(disable-eval (disable-eval (image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f522.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)))</param>🔢</x-display> Line numbers</bold></x-color>
+** Line numbers
 
     We don't enable it globally, enable it in the modes you want.
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+    #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>      (<x-color><param>#81A1C1</param>setq</x-color> linum-format <x-color><param>#A3BE8C</param>"%3d \u2502"</x-color>)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+      (setq linum-format "%3d \u2502")
+    #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(disable-eval (disable-eval (image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f526.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)))</param>🔦</x-display> Highlight matching parenthesis</bold></x-color>
+** Highlight matching parenthesis
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+    #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>      (show-paren-mode t)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+      (show-paren-mode t)
+    #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(disable-eval (disable-eval (image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f645.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)))</param>🙅</x-display> Disable GNU clutter</bold></x-color>
+** Disable GNU clutter
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+    #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>      (menu-bar-mode -1)
+      (menu-bar-mode -1)
       (toggle-scroll-bar -1)
       (tool-bar-mode -1)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+    #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(disable-eval (disable-eval (image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f645.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)))</param>🙅</x-display> Say no to tabs</bold></x-color>
+** Say no to tabs
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>   #+begin_src emacs-lisp
+   #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>     (<x-color><param>#81A1C1</param>setq-default</x-color> indent-tabs-mode nil)
-     (<x-color><param>#81A1C1</param>setq-default</x-color> tab-width 2)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>   #+end_src
+     (setq-default indent-tabs-mode nil)
+     (setq-default tab-width 2)
+   #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(disable-eval (disable-eval (image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f691.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)))</param>🚑</x-display> Fix shell commands on osx</bold></x-color>
+** Stop making temp files!
+
+   Just ripped it from [[https://github.com/pjaspers/emacs/blob/master/customizations/pjaspers-editing.el#L51][pjasper]].
+   #+begin_src emacs-lisp
+
+     (setq backup-inhibited t
+           make-backup-files nil
+           backup-directory-alist `((".*" . ,temporary-file-directory))
+           auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+   #+end_src
+
+** Fix shell commands on osx
 
     OS X has an issue with picking up the right system env
     Explictly setting it here (So shell-command and buddies can use it)
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+    #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>      (<x-color><param>#81A1C1</param>require</x-color> '<x-color><param>#81A1C1</param>exec-path-from-shell</x-color>)
-      (<x-color><param>#81A1C1</param>when</x-color> (memq window-system '(mac ns))
+      (require 'exec-path-from-shell)
+      (when (memq window-system '(mac ns))
         (exec-path-from-shell-initialize))
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+    #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(disable-eval (disable-eval (image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f698.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)))</param>🚘</x-display> Mini buffer completion</bold></x-color>
+** Mini buffer completion
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+    #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>      (ivy-mode t)
+      (ivy-mode t)
       (counsel-mode t)
       (counsel-projectile-mode t)
       (ivy-rich-mode t)
       (all-the-icons-ivy-rich-mode t)
 
 
-      (<x-color><param>#81A1C1</param>setq</x-color> ivy-use-virtual-buffers t
-            ivy-count-format <x-color><param>#A3BE8C</param>"%d/%d "</x-color>)
+      (setq ivy-use-virtual-buffers t
+            ivy-count-format "%d/%d ")
 
 
-      (<x-color><param>#81A1C1</param>setq</x-color> all-the-icons-ivy-file-commands
+      (setq all-the-icons-ivy-file-commands
             '(counsel-find-file counsel-file-jump counsel-recentf counsel-projectile-find-file counsel-projectile-find-dir))
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+    #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>***</x-color></x-bg-color><x-color><param>#5E81AC</param>* </x-color>[[https://github.com/abo-abo/swiper/wiki/Dont-open-directory-mode][don't open directory mode]]
+**** [[https://github.com/abo-abo/swiper/wiki/Dont-open-directory-mode][don't open directory mode]]
 
      When enable "Don't open directory" mode, ivy-mode will only open file and don't open directory. if user want to open dirctory, another key should typed, for example: "C-f". This mode is simple and predictable.
 
@@ -517,63 +586,57 @@ Text-Width: 70
 
        (define-key ivy-minibuffer-map (kbd "<<return>") 'ivy-alt-done)
        (define-key ivy-minibuffer-map (kbd "C-f") 'eh-ivy-open-current-typed-path)
-<x-color><param>#78808f</param>     #+end_src</x-color>
+     #+end_src
 
-<x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(disable-eval (disable-eval (image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f6ab.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)))</param>🚫</x-display> Delete selection</bold></x-color>
+** Delete selection
 
     Act like a normal text editor.
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+    #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>      (delete-selection-mode t)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* Pickup changes to files.</bold></x-color>
+      (delete-selection-mode t)
+    #+end_src
+* Advanced Settings
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>   #+begin_src emacs-lisp
+** Git
 
-</x-color><x-color><param>#D8DEE9</param>     (global-auto-revert-mode 1)
-</x-color></x-bg-color><x-color><param>#78808f</param>   #+end_src</x-color>
-<x-color><param>#8FBCBB</param><bold>* <x-display><param>(image :type png :file "/Users/tombosmans/.emacs.d/emojis/emojione-v2.2.6-22/1f4bb.png" :ascent center :heuristic-mask t :background "#2E3440" :scale 1 :height 15)</param>💻</x-display> Advanced Settings</bold></x-color>
+*** Keybindings
 
-<x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (raise -0.24))))))))))))))))))))))))))))))))))))))))))))))))))))))</param></x-display> Git</bold></x-color>
+    #+begin_src emacs-lisp
 
-<x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* Keybindings</bold></x-color>
+      (global-set-key (kbd "C-c m s") 'magit-status)
+      (global-set-key (kbd "C-c m p") 'magit-push)
+      (global-set-key (kbd "C-c m c") 'magit-checkout)
+    #+end_src
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+** Org
 
-</x-color></x-bg-color><x-bg-color><param>#373E4C</param><x-color><param>#D8DEE9</param>      (global-set-key (kbd <x-color><param>#A3BE8C</param>"C-c m s"</x-color>) 'magit-status)
-      (global-set-key (kbd <x-color><param>#A3BE8C</param>"C-c m p"</x-color>) 'magit-push)
-      (global-set-key (kbd <x-color><param>#A3BE8C</param>"C-c m c"</x-color>) 'magit-checkout)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+*** Settings
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (raise -0.24)))))))))))))))))))))))))))))))))))))))))))))))))))</param></x-display> Org</bold></x-color>
+    #+begin_src emacs-lisp
 
-<x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* Settings</bold></x-color>
+      (setq org-hide-emphasis-markers t)
+    #+end_src
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+*** Disable emacs build in version control
 
-</x-color></x-bg-color><x-bg-color><param>#373E4C</param><x-color><param>#D8DEE9</param>      (<x-color><param>#81A1C1</param>setq</x-color> org-hide-emphasis-markers t)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+    #+begin_src emacs-lisp
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* Disable emacs build in version control</bold></x-color>
+      (setq vc-handled-backends nil)
+    #+end_src
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
+*** Add nice bullets
 
-</x-color></x-bg-color><x-bg-color><param>#373E4C</param><x-color><param>#D8DEE9</param>      (<x-color><param>#81A1C1</param>setq</x-color> vc-handled-backends nil)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+    #+begin_src emacs-lisp
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* Add nice bullets</bold></x-color>
-
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>    #+begin_src emacs-lisp
-
-</x-color></x-bg-color><x-bg-color><param>#373E4C</param><x-color><param>#D8DEE9</param>      (<x-color><param>#81A1C1</param>require</x-color> '<x-color><param>#81A1C1</param>org-bullets</x-color>)
+      (require 'org-bullets)
 
 
-      (add-hook 'org-mode-hook (<x-color><param>#81A1C1</param>lambda</x-color> () (org-bullets-mode 1)))
-      (<x-color><param>#81A1C1</param>setq</x-color> org-bullets-bullet-list '(<x-color><param>#A3BE8C</param>"⁖"</x-color>))
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>    #+end_src
+      (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+      (setq org-bullets-bullet-list '("⁖"))
+    #+end_src
 
-</x-color>*** Make Lists use a dot
+*** Make Lists use a dot
 
     #+begin_src emacs-lisp
 
@@ -605,98 +668,97 @@ Text-Width: 70
 
 
         (add-hook 'org-mode-hook 'theme-org-mode-hook)
-<x-color><param>#78808f</param>    #+end_src</x-color>
+    #+end_src
 
-<x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (raise -0.24))))))))))))))))))))))))))))))))))))))))))))))))))))))</param></x-display> Ruby</bold></x-color>
+** Ruby
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>  #+begin_src emacs-lisp
+  #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>    (<x-color><param>#81A1C1</param>defun</x-color> <x-color><param>#88C0D0</param>my-ruby-mode-hook</x-color> ()
+    (defun my-ruby-mode-hook ()
       (rubocop-mode t)
 
       (dev-mode t))
 
 
     (add-hook 'ruby-mode-hook 'my-ruby-mode-hook)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>  #+end_src
+  #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (raise -0.24))))))))))))))))))))))))))))))))))))))))))))))))))))))</param></x-display> Terminal</bold></x-color>
+** Terminal
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>   #+begin_src emacs-lisp
+   #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>     (<x-color><param>#81A1C1</param>defun</x-color> <x-color><param>#88C0D0</param>my-term-mode-hook</x-color> ()
-       <x-color><param>#616e88</param>"Load when term-mode is loaded."</x-color>
-       (define-key term-raw-map (kbd <x-color><param>#A3BE8C</param>"C-c C-y"</x-color>) 'term-paste)) <x-color><param>#616e88</param>;; paste clipboard into terminal
+     (defun my-term-mode-hook ()
+       "Load when term-mode is loaded."
+       (define-key term-raw-map (kbd "C-c C-y") 'term-paste)) ;; paste clipboard into terminal
 
-</x-color>
 
      (add-hook 'term-mode-hook 'my-term-mode-hook)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>   #+end_src
+   #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (raise -0.24))))))))))))))))))))))))))))))))))))))))))))))))))))))</param></x-display> SQL</bold></x-color>
+** SQL
 
-<x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>**</x-color></x-bg-color><x-color><param>#81A1C1</param><bold>* format</bold></x-color>
+*** format
 
-<x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>***</x-color></x-bg-color><x-color><param>#5E81AC</param>* Dependencies</x-color>
+**** Dependencies
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>     #+begin_src shell
+     #+begin_src shell
 
-</x-color><x-color><param>#D8DEE9</param>        pip3 install sqlparse
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>     #+end_src
+        pip3 install sqlparse
+     #+end_src
 
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>***</x-color></x-bg-color><x-color><param>#5E81AC</param>* setup</x-color>
+**** setup
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>     #+begin_src emacs-lisp
+     #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>       (<x-color><param>#81A1C1</param>setq</x-color> sqlformat-command 'pgformatter)
-       (<x-color><param>#81A1C1</param>setq</x-color> sqlformat-args '(<x-color><param>#A3BE8C</param>"-s2"</x-color> <x-color><param>#A3BE8C</param>"-g"</x-color>))
+       (setq sqlformat-command 'pgformatter)
+       (setq sqlformat-args '("-s2" "-g"))
 
 
-       (<x-color><param>#81A1C1</param>defun</x-color> <x-color><param>#88C0D0</param>my-sql-mode-hook</x-color> ()
-         <x-color><param>#616e88</param>"Load whenever sql-mode is loaded."</x-color>
+       (defun my-sql-mode-hook ()
+         "Load whenever sql-mode is loaded."
 
          (dev-mode t)
-         (local-set-key (kbd <x-color><param>#A3BE8C</param>"C-c C-f"</x-color>) 'sqlformat))
+         (local-set-key (kbd "C-c C-f") 'sqlformat))
 
 
        (add-hook 'sql-mode-hook 'my-sql-mode-hook)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>     #+end_src
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (raise -0.24))))))))</param></x-display> HTML</bold></x-color>
+     #+end_src
+** HTML
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>   #+begin_src emacs-lisp
+   #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>     (add-to-list 'auto-mode-alist '(<x-color><param>#A3BE8C</param>"\\.html?\\'"</x-color> . web-mode))
-     (add-to-list 'auto-mode-alist '(<x-color><param>#A3BE8C</param>"\\.erb\\'"</x-color> . web-mode))
+     (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+     (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 
-     (add-to-list 'auto-mode-alist '(<x-color><param>#A3BE8C</param>"\\.hbs\\'"</x-color> . web-mode))
+     (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
 
 
-     (<x-color><param>#81A1C1</param>setq</x-color> web-mode-markup-indent-offset 2
+     (setq web-mode-markup-indent-offset 2
            web-mode-css-indent-offset 2
            web-mode-code-indent-offset 2)
 
 
-     (<x-color><param>#81A1C1</param>defun</x-color> <x-color><param>#88C0D0</param>my-web-mode-hook</x-color> ()
+     (defun my-web-mode-hook ()
 
        (dev-mode t))
 
 
      (add-hook 'web-mode-hook  'my-web-mode-hook)
-</x-color></x-bg-color><x-color><param>#8FBCBB</param>   #+end_src
-</x-color><x-bg-color><param>#2E3440</param><x-color><param>#2E3440</param>*</x-color></x-bg-color><x-color><param>#88C0D0</param><bold>* <x-display><param>(disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (disable-eval (raise -0.24))))))))</param></x-display> Javascript</bold></x-color>
+   #+end_src
+** Javascript
 
-<x-bg-color><param>#373E4C</param><x-color><param>#8FBCBB</param>   #+begin_src emacs-lisp
+   #+begin_src emacs-lisp
 
-</x-color><x-color><param>#D8DEE9</param>     (add-to-list 'auto-mode-alist '(<x-color><param>#A3BE8C</param>"\\.js\\'"</x-color> . rjsx-mode))
-
-
-     (<x-color><param>#81A1C1</param>setq</x-color> js-indent-level 2)
+     (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
 
 
-     (<x-color><param>#81A1C1</param>defun</x-color> <x-color><param>#88C0D0</param>my-js-mode-hook</x-color> ()
+     (setq js-indent-level 2)
+
+
+     (defun my-js-mode-hook ()
 
        (dev-mode t))
 
 
      (add-hook 'rjsx-mode-hook 'my-js-mode-hook)
-</x-color></x-bg-color><x-color><param>#78808f</param>   #+end_src</x-color>
+   #+end_src
